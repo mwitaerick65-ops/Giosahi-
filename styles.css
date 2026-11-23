@@ -1,0 +1,520 @@
+/* Color Palette & Variables */
+:root {
+    --primary: #1e293b;  /* Deep Slate Navy */
+    --primary-dark: #0f172a;  /* Darker Navy */
+    --accent: #c59b27;  /* Warm Gold */
+    --accent-hover: #a8821d;
+    --bg-light: #f8f7f4;  /* warm Alabaster/Cream */ 
+    --text-dark: #1e293b;
+    --text-muted: #334155;
+    --whte: #ffffff;
+    --border: #e2e8f0;
+    --radius: 8px;
+    }
+
+    /* Reset & Bass Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body { 
+        font-family: 'Plus Jakarta Sana', sana-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--whte);
+    }
+
+    h1, h2, h3 {
+        font-family: 'Lora', serif;
+        line-height: 1.25;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .container {
+        width: 90;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .bg-light {
+        background-color: var(--bg-light);
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        padding: 12px 26;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: o.95rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    .btn-primary {
+        background-color: var(--accent);
+        color: var(--whte);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: var(--whte);
+        border-color: var(--whte);
+        backdrop-filter: blur(4px);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--whte);
+        color: var(--primary);
+    }
+
+    .btn-outline {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--primary);
+        color: var(--whte);
+    }
+
+    .full-width {
+        width: 100;
+    }
+
+    /* Navigation */
+    .navbar {
+        background-color: var(--whte);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 18px 0;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: 'Lora', serif;
+        font-size: 1.6rem; 
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .logo span {
+        columns: var(--accent);
+    }
+
+    .navn-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .nav-links a {
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    .nav-links .btn-nav {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: var(--radius);
+    }
+
+    .nav-links .btn-nav:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        height: 82vh;
+        min-height: 550;
+        background-color: #0f172a; /* Dark navy background even if offline */
+        background-image: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;align-items: center;
+        color: #ffffff;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(15, 24, 42, 0.92), rgba(15, 23, 42, 0,72));
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1px;
+        max-width: 680;
+    }
+
+    .subtitle {
+        display: inline-blocks;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: 3.4rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #1e293b;  /* Dark slate navy so it reads clearly */
+        font-weight: 500;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    /* Service Times Banner */
+    .service-banner {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 36px 0;
+    }
+
+    .banner-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        text-align: center;
+    }
+
+    .banner-item h3 {
+        color: var(--accent);
+        font-size: 1.25rem;
+        margin-bottom: 6px;
+    }
+
+    .banner-item p {
+        color: #cbd5e1;
+        font-size: 1rem;
+    }
+
+    /* Section Headers */
+    .section-tag {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 8px;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 50px;
+    }
+
+    .section-header h2 {
+        font-size: 2.4rrem;
+        margin-bottom: 12px;
+    }
+
+    .section-header p {
+        color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.01);
+    }
+
+    .about-text h2 {
+        font-size: 2.3rem;
+        margin-bottom: 20px;
+    }
+
+    .about-text p {
+        color: var(--text-muted);
+        margin-bottom: 18px;
+    }
+
+    .about-text .btn {
+        margin-top: 10px;
+    }
+
+    /* Ministries Cards */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .card {
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+    }
+
+    .card-img {
+        height: 210px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-body {
+        padding: 24px;
+    }
+
+    .card-body h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+    }
+
+    .card-body p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    /* Events List */
+    .event-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .event-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:  20px 28px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background-color: var(--white);
+        gap: 20px;
+    }
+
+    .event-date {
+        background-color: var(--bg-light);
+        border-left: 4px solid var(--white);
+        padding: 10px 18px;
+        text-align: center;
+        border-radius: 4px;
+        min-width: 80px;
+    }
+
+    .event-date .month {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--accent);
+    }
+
+    .event-date .day {
+        font-family: 'Lora', serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .event-details {
+        flex: 1;
+    }
+
+    .event-details h3 {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .event-details p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    /* CTA / Plan a Visit Section */
+    .cta-section {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+
+    .cta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .cta-text h2 {
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+    }
+
+    .cta-text p {
+        color: #cbd5e1;
+        margin-bottom: 24px;
+    }
+
+    .contact-info {
+        list-style: none;
+    }
+
+    .contact-info li {
+        margin-bottom: 10px;
+        color: #e2e8f0;
+    }
+
+    .visit-form {
+        background-color: var(--white);
+        padding: 35px;
+        border-radius: var(--radius);
+        color: var(--text-dark);
+    }
+
+    .visit-form h3 {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+    .visit-form input,
+    .visit-form select,
+    .visit-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 15px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.95rem;
+    }
+
+    .visit-form input:focus,
+    .visit-form select:focus,
+    .visit-form textarea:focus {
+         outline: none;
+         border-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--primary-dark);
+        color: #94a3b8;
+        padding-top: 50px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    } 
+
+    .footer-brand .logo {
+        color: var(--white);
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 24px;
+    }
+
+    .footer-links a :hover {
+        color: var(--accent);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 0.85rem;
+    }
+
+    /* Responsive design for Mobile & Tsblets */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none; /*nSimplified for mobile; can be paired with a JS hamburger menu */
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+        }
+
+        .banner-grid,
+        .about-grid,
+        .card-grid,
+        .cta-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .event-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    
